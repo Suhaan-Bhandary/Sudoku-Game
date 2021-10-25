@@ -1,0 +1,27 @@
+td {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  user-select: none;
+}
+
+.right-border {
+  border-right: 3px solid black;
+}
+
+.bottom-border {
+  border-bottom: 3px solid black;
+}
+
+.cell-changed {
+  color: blue;
+}
+
+.cell-modifiable{
+  cursor: pointer;
+}
+
+.cell-invalid {
+  background-color: #ff000054;
+}
