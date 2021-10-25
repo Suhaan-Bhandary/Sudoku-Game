@@ -14,12 +14,9 @@ td {
   border-bottom: 3px solid black;
 }
 
-.cell-changed {
-  color: blue;
-}
-
 .cell-modifiable{
   cursor: pointer;
+  color: blue;
 }
 
 .cell-invalid {

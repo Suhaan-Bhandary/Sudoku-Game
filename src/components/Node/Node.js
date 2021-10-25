@@ -9,7 +9,6 @@ const Node = (props) => {
     let className = `cell 
     ${row === 2 || row === 5 ? "bottom-border" : ""}
     ${column === 2 || column === 5 ? "right-border" : ""}
-    ${cell.changed ? "cell-changed" : ""}
     ${cell.isValid ? "" : "cell-invalid"}
     ${cell.isModifiable ? "cell-modifiable" : ""}
     `;

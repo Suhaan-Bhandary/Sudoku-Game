@@ -20,7 +20,6 @@ const getNode = (row, column, value, isModifiable) => {
     row: row,
     column: column,
     value: value,
-    changed: false,
     isValid: true,
     isModifiable: isModifiable,
   };
