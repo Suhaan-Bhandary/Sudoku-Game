@@ -17,9 +17,20 @@ const Grid = () => {
 
   useEffect(() => {
     // Creating a grid for the sudoko
-    let newSudokoGrid = createSudokoGrid();
-    setStartingGrid(arrayDeepCopy(newSudokoGrid));
-    setGrid(arrayDeepCopy(newSudokoGrid));
+    if (
+      localStorage.getItem("startingGrid") == null ||
+      localStorage.getItem("currentGrid") == null
+    ) {
+      let newSudokoGrid = createSudokoGrid();
+      setStartingGrid(arrayDeepCopy(newSudokoGrid));
+      setGrid(arrayDeepCopy(newSudokoGrid));
+
+      localStorage.setItem("startingGrid", JSON.stringify(newSudokoGrid));
+      localStorage.setItem("currentGrid", JSON.stringify(newSudokoGrid));
+    } else {
+      setStartingGrid(JSON.parse(localStorage.getItem("startingGrid")));
+      setGrid(JSON.parse(localStorage.getItem("currentGrid")));
+    }
   }, []);
 
   const handleReset = () => {
@@ -41,7 +52,10 @@ const Grid = () => {
     
     checkBoard(newGrid);
 
+    // setting the value to the grid and also to the local storage
     setGrid(newGrid);
+    localStorage.setItem("currentGrid", JSON.stringify(newGrid));
+
   };
 
   return (
