@@ -35,6 +35,7 @@ const Grid = () => {
 
   const handleReset = () => {
     setGrid(arrayDeepCopy(startingGrid));
+    localStorage.setItem("currentGrid", JSON.stringify(startingGrid));
   };
 
   const handleCellClick = (row, column, isModifiable) => {
