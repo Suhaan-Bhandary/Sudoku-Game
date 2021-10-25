@@ -6,6 +6,7 @@ import {
   arrayDeepCopy,
   checkBoard,
   createSudokoGrid,
+  solveSudoko,
 } from "../../utility";
 
 import "./Grid.css";
@@ -38,8 +39,17 @@ const Grid = () => {
     localStorage.setItem("currentGrid", JSON.stringify(startingGrid));
   };
 
+  const handleSolve = () => {
+    let solvedBoard = JSON.parse(JSON.stringify(grid));
+    let solvedStatus = solveSudoko(solvedBoard);
+    if(solvedStatus === false) {
+      alert("Cannot be solved!");
+    }
+    setGrid(solvedBoard);
+  };
+
   const handleCellClick = (row, column, isModifiable) => {
-    if (!isModifiable){
+    if (!isModifiable) {
       animateElement(".grid-table", "headShake");
       return;
     }
@@ -54,12 +64,12 @@ const Grid = () => {
     // setting the value to the grid and also to the local storage
     setGrid(newGrid);
     localStorage.setItem("currentGrid", JSON.stringify(newGrid));
-
   };
 
   return (
     <div className="Grid">
       <h1 onClick={() => handleReset()}>Reset</h1>
+      <h1 onClick={() => handleSolve()}>Solve</h1>
 
       <table className="grid-table">
         <tbody>
