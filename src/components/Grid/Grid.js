@@ -57,6 +57,29 @@ const Grid = () => {
     setGrid(solvedBoard);
   };
 
+  const handleHint = () => {
+    let solvedBoard = JSON.parse(JSON.stringify(grid));
+    let solvedStatus = solveSudoko(solvedBoard);
+    if (solvedStatus === false) {
+      alert("Cannot be solved!");
+      return;
+    }
+
+    for (let i = 0; i < 9; i++) {
+      for (let j = 0; j < 9; j++) {
+        if (grid[i][j].value === 0) {
+          let newBoard = JSON.parse(JSON.stringify(grid));
+
+          newBoard[i][j].value = solvedBoard[i][j].value;
+          newBoard[i][j].isHinted = true;
+
+          setGrid(newBoard);
+          return;
+        }
+      }
+    }
+  };
+
   const handleCellClick = (row, column, isModifiable) => {
     if (!isModifiable) {
       animateElement(".grid-table", "headShake");
@@ -79,6 +102,7 @@ const Grid = () => {
     <div className="Grid">
       <h1 onClick={() => handleReset()}>Reset</h1>
       <h1 onClick={() => handleSolve()}>Solve</h1>
+      <h1 onClick={() => handleHint()}>Hint</h1>
 
       <table className="grid-table">
         <tbody>
