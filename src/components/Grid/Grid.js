@@ -80,6 +80,10 @@ const Grid = () => {
       }
     }
 
+    if(emptyNodePositionList.length  == 0){
+      return;
+    }
+
     // Making new node and replacing the empty value with the hint
     let newBoard = JSON.parse(JSON.stringify(grid));
     const hintNode =
