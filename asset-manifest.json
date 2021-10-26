@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sudoko-puzzle/static/css/main.84e8e79e.chunk.css",
-    "main.js": "/sudoko-puzzle/static/js/main.3ff76ff0.chunk.js",
-    "main.js.map": "/sudoko-puzzle/static/js/main.3ff76ff0.chunk.js.map",
+    "main.js": "/sudoko-puzzle/static/js/main.0e478701.chunk.js",
+    "main.js.map": "/sudoko-puzzle/static/js/main.0e478701.chunk.js.map",
     "runtime-main.js": "/sudoko-puzzle/static/js/runtime-main.cdf3b3ed.js",
     "runtime-main.js.map": "/sudoko-puzzle/static/js/runtime-main.cdf3b3ed.js.map",
     "static/css/2.a1596f27.chunk.css": "/sudoko-puzzle/static/css/2.a1596f27.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.a1596f27.chunk.css",
     "static/js/2.60adc96e.chunk.js",
     "static/css/main.84e8e79e.chunk.css",
-    "static/js/main.3ff76ff0.chunk.js"
+    "static/js/main.0e478701.chunk.js"
   ]
 }
