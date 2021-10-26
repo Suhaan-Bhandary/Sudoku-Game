@@ -80,7 +80,7 @@ const Grid = () => {
       }
     }
 
-    if(emptyNodePositionList.length  == 0){
+    if (emptyNodePositionList.length === 0) {
       return;
     }
 
