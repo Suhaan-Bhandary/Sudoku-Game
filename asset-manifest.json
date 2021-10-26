@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/sudoko-puzzle/static/css/main.c16b3556.chunk.css",
+    "main.css": "/sudoko-puzzle/static/css/main.84e8e79e.chunk.css",
     "main.js": "/sudoko-puzzle/static/js/main.3ff76ff0.chunk.js",
     "main.js.map": "/sudoko-puzzle/static/js/main.3ff76ff0.chunk.js.map",
     "runtime-main.js": "/sudoko-puzzle/static/js/runtime-main.cdf3b3ed.js",
@@ -12,14 +12,14 @@
     "static/js/3.f6a9e6dc.chunk.js.map": "/sudoko-puzzle/static/js/3.f6a9e6dc.chunk.js.map",
     "index.html": "/sudoko-puzzle/index.html",
     "static/css/2.a1596f27.chunk.css.map": "/sudoko-puzzle/static/css/2.a1596f27.chunk.css.map",
-    "static/css/main.c16b3556.chunk.css.map": "/sudoko-puzzle/static/css/main.c16b3556.chunk.css.map",
+    "static/css/main.84e8e79e.chunk.css.map": "/sudoko-puzzle/static/css/main.84e8e79e.chunk.css.map",
     "static/js/2.60adc96e.chunk.js.LICENSE.txt": "/sudoko-puzzle/static/js/2.60adc96e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.cdf3b3ed.js",
     "static/css/2.a1596f27.chunk.css",
     "static/js/2.60adc96e.chunk.js",
-    "static/css/main.c16b3556.chunk.css",
+    "static/css/main.84e8e79e.chunk.css",
     "static/js/main.3ff76ff0.chunk.js"
   ]
 }
