@@ -1,6 +1,6 @@
 {
   "short_name": "React App",
-  "name": "Sudoko Puzzle",
+  "name": "Sudoku Game",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/sudoko-puzzle/static/css/main.84e8e79e.chunk.css",
-    "main.js": "/sudoko-puzzle/static/js/main.616365cb.chunk.js",
-    "main.js.map": "/sudoko-puzzle/static/js/main.616365cb.chunk.js.map",
-    "runtime-main.js": "/sudoko-puzzle/static/js/runtime-main.cdf3b3ed.js",
-    "runtime-main.js.map": "/sudoko-puzzle/static/js/runtime-main.cdf3b3ed.js.map",
-    "static/css/2.a1596f27.chunk.css": "/sudoko-puzzle/static/css/2.a1596f27.chunk.css",
-    "static/js/2.60adc96e.chunk.js": "/sudoko-puzzle/static/js/2.60adc96e.chunk.js",
-    "static/js/2.60adc96e.chunk.js.map": "/sudoko-puzzle/static/js/2.60adc96e.chunk.js.map",
-    "static/js/3.f6a9e6dc.chunk.js": "/sudoko-puzzle/static/js/3.f6a9e6dc.chunk.js",
-    "static/js/3.f6a9e6dc.chunk.js.map": "/sudoko-puzzle/static/js/3.f6a9e6dc.chunk.js.map",
-    "index.html": "/sudoko-puzzle/index.html",
-    "static/css/2.a1596f27.chunk.css.map": "/sudoko-puzzle/static/css/2.a1596f27.chunk.css.map",
-    "static/css/main.84e8e79e.chunk.css.map": "/sudoko-puzzle/static/css/main.84e8e79e.chunk.css.map",
-    "static/js/2.60adc96e.chunk.js.LICENSE.txt": "/sudoko-puzzle/static/js/2.60adc96e.chunk.js.LICENSE.txt"
+    "main.css": "/Sudoku-Game/static/css/main.b0893b17.chunk.css",
+    "main.js": "/Sudoku-Game/static/js/main.7c652046.chunk.js",
+    "main.js.map": "/Sudoku-Game/static/js/main.7c652046.chunk.js.map",
+    "runtime-main.js": "/Sudoku-Game/static/js/runtime-main.30993a7f.js",
+    "runtime-main.js.map": "/Sudoku-Game/static/js/runtime-main.30993a7f.js.map",
+    "static/css/2.a1596f27.chunk.css": "/Sudoku-Game/static/css/2.a1596f27.chunk.css",
+    "static/js/2.70c0760f.chunk.js": "/Sudoku-Game/static/js/2.70c0760f.chunk.js",
+    "static/js/2.70c0760f.chunk.js.map": "/Sudoku-Game/static/js/2.70c0760f.chunk.js.map",
+    "static/js/3.da37fd81.chunk.js": "/Sudoku-Game/static/js/3.da37fd81.chunk.js",
+    "static/js/3.da37fd81.chunk.js.map": "/Sudoku-Game/static/js/3.da37fd81.chunk.js.map",
+    "index.html": "/Sudoku-Game/index.html",
+    "static/css/2.a1596f27.chunk.css.map": "/Sudoku-Game/static/css/2.a1596f27.chunk.css.map",
+    "static/css/main.b0893b17.chunk.css.map": "/Sudoku-Game/static/css/main.b0893b17.chunk.css.map",
+    "static/js/2.70c0760f.chunk.js.LICENSE.txt": "/Sudoku-Game/static/js/2.70c0760f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.cdf3b3ed.js",
+    "static/js/runtime-main.30993a7f.js",
     "static/css/2.a1596f27.chunk.css",
-    "static/js/2.60adc96e.chunk.js",
-    "static/css/main.84e8e79e.chunk.css",
-    "static/js/main.616365cb.chunk.js"
+    "static/js/2.70c0760f.chunk.js",
+    "static/css/main.b0893b17.chunk.css",
+    "static/js/main.7c652046.chunk.js"
   ]
 }
