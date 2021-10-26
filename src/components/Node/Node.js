@@ -11,6 +11,7 @@ const Node = (props) => {
     ${column === 2 || column === 5 ? "right-border" : ""}
     ${cell.isValid ? "" : "cell-invalid"}
     ${cell.isModifiable ? "cell-modifiable" : ""}
+    ${cell.isHinted ? "cell-hinted" : ""}
     `;
 
     return className;

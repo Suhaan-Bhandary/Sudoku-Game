@@ -4,6 +4,8 @@ td {
   height: 30px;
   text-align: center;
   user-select: none;
+  font-weight : bold;
+
 }
 
 .right-border {
@@ -21,4 +23,8 @@ td {
 
 .cell-invalid {
   background-color: #ff000054;
+}
+
+.cell-hinted{
+  color: orange;
 }

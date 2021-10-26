@@ -22,6 +22,7 @@ const getNode = (row, column, value, isModifiable) => {
     value: value,
     isValid: true,
     isModifiable: isModifiable,
+    isHinted: false,
   };
 };
 

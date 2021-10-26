@@ -42,8 +42,17 @@ const Grid = () => {
   const handleSolve = () => {
     let solvedBoard = JSON.parse(JSON.stringify(grid));
     let solvedStatus = solveSudoko(solvedBoard);
-    if(solvedStatus === false) {
+    if (solvedStatus === false) {
       alert("Cannot be solved!");
+      return;
+    }
+
+    for (let i = 0; i < 9; i++) {
+      for (let j = 0; j < 9; j++) {
+        if (grid[i][j].value === 0) {
+          solvedBoard[i][j].isHinted = true;
+        }
+      }
     }
     setGrid(solvedBoard);
   };
