@@ -27,4 +27,12 @@ td {
 
 .cell-hinted{
   color: orange;
+  animation-name: hintAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes hintAnimation {
+  from {background-color: orange;}
+  to {background-color: initial;}
 }
