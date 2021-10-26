@@ -34,14 +34,14 @@ const Grid = () => {
     }
   }, []);
 
-  const setCurrentGrid = (grid) => {
+  const setCurrentGrid = (givenGrid) => {
     // setting the value to the grid and also to the local storage
-    setGrid(grid);
-    localStorage.setItem("currentGrid", JSON.stringify(grid));
+    setGrid(givenGrid);
+    localStorage.setItem("currentGrid", JSON.stringify(givenGrid));
   };
 
   const handleReset = () => {
-    setGrid(startingGrid);
+    setCurrentGrid(startingGrid);
   };
 
   const handleSolve = () => {
