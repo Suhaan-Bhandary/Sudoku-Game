@@ -34,9 +34,14 @@ const Grid = () => {
     }
   }, []);
 
+  const setCurrentGrid = (grid) => {
+    // setting the value to the grid and also to the local storage
+    setGrid(grid);
+    localStorage.setItem("currentGrid", JSON.stringify(grid));
+  };
+
   const handleReset = () => {
-    setGrid(arrayDeepCopy(startingGrid));
-    localStorage.setItem("currentGrid", JSON.stringify(startingGrid));
+    setGrid(startingGrid);
   };
 
   const handleSolve = () => {
@@ -54,7 +59,7 @@ const Grid = () => {
         }
       }
     }
-    setGrid(solvedBoard);
+    setCurrentGrid(solvedBoard);
   };
 
   const handleHint = () => {
@@ -88,7 +93,7 @@ const Grid = () => {
       solvedBoard[hint_row][hint_column].value;
     newBoard[hint_row][hint_column].isHinted = true;
 
-    setGrid(newBoard);
+    setCurrentGrid(newBoard);
   };
 
   const handleCellClick = (row, column, isModifiable) => {
@@ -105,8 +110,7 @@ const Grid = () => {
     checkBoard(newGrid);
 
     // setting the value to the grid and also to the local storage
-    setGrid(newGrid);
-    localStorage.setItem("currentGrid", JSON.stringify(newGrid));
+    setCurrentGrid(newGrid);
   };
 
   return (
