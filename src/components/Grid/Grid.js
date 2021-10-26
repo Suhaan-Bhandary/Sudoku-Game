@@ -56,6 +56,7 @@ const Grid = () => {
       for (let j = 0; j < 9; j++) {
         if (grid[i][j].value === 0) {
           solvedBoard[i][j].isHinted = true;
+          solvedBoard[i][j].isModifiable = false;
         }
       }
     }
@@ -96,6 +97,7 @@ const Grid = () => {
     newBoard[hint_row][hint_column].value =
       solvedBoard[hint_row][hint_column].value;
     newBoard[hint_row][hint_column].isHinted = true;
+    newBoard[hint_row][hint_column].isModifiable = false;
 
     setCurrentGrid(newBoard);
   };
