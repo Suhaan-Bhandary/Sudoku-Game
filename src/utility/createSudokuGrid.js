@@ -1,5 +1,5 @@
-const getSudokoGrid = () => {
-  let sudokoGrid = [
+const getSudokuGrid = () => {
+  let sudokuGrid = [
     [5, 3, 0, 0, 7, 0, 0, 0, 0],
     [6, 0, 0, 1, 9, 5, 0, 0, 0],
     [0, 9, 8, 0, 0, 0, 0, 6, 0],
@@ -12,7 +12,7 @@ const getSudokoGrid = () => {
     [0, 0, 0, 4, 1, 9, 0, 0, 5],
     [0, 0, 0, 0, 8, 0, 0, 7, 9],
   ];
-  return sudokoGrid;
+  return sudokuGrid;
 };
 
 const getNode = (row, column, value, isModifiable) => {
@@ -26,9 +26,9 @@ const getNode = (row, column, value, isModifiable) => {
   };
 };
 
-const createSudokoGrid = () => {
-  const numberGrid = getSudokoGrid();
-  let sudokoGrid = [];
+const createSudokuGrid = () => {
+  const numberGrid = getSudokuGrid();
+  let sudokuGrid = [];
 
   for (let i = 0; i <9;i++){
     let row = [];
@@ -37,10 +37,10 @@ const createSudokoGrid = () => {
       let node = getNode(i, j, numberGrid[i][j], isModifiable);
       row.push(node);
     }
-    sudokoGrid.push(row);
+    sudokuGrid.push(row);
   }
 
-  return sudokoGrid;
+  return sudokuGrid;
 }
 
-export default createSudokoGrid;
+export default createSudokuGrid;

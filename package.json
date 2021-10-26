@@ -1,6 +1,6 @@
 {
-  "name": "sudoko-puzzle",
-  "homepage": "https://Suhaan-Bhandary.github.io/sudoko-puzzle",
+  "name": "sudoku-game",
+  "homepage": "https://Suhaan-Bhandary.github.io/Sudoku-Game",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

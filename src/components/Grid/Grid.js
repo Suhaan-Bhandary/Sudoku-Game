@@ -5,8 +5,8 @@ import {
   animateElement,
   arrayDeepCopy,
   checkBoard,
-  createSudokoGrid,
-  solveSudoko,
+  createSudokuGrid,
+  solveSudoku,
 } from "../../utility";
 
 import "./Grid.css";
@@ -17,17 +17,17 @@ const Grid = () => {
   const [startingGrid, setStartingGrid] = useState(null);
 
   useEffect(() => {
-    // Creating a grid for the sudoko
+    // Creating a grid for the sudoku
     if (
       localStorage.getItem("startingGrid") == null ||
       localStorage.getItem("currentGrid") == null
     ) {
-      let newSudokoGrid = createSudokoGrid();
-      setStartingGrid(arrayDeepCopy(newSudokoGrid));
-      setGrid(arrayDeepCopy(newSudokoGrid));
+      let newSudokuGrid = createSudokuGrid();
+      setStartingGrid(arrayDeepCopy(newSudokuGrid));
+      setGrid(arrayDeepCopy(newSudokuGrid));
 
-      localStorage.setItem("startingGrid", JSON.stringify(newSudokoGrid));
-      localStorage.setItem("currentGrid", JSON.stringify(newSudokoGrid));
+      localStorage.setItem("startingGrid", JSON.stringify(newSudokuGrid));
+      localStorage.setItem("currentGrid", JSON.stringify(newSudokuGrid));
     } else {
       setStartingGrid(JSON.parse(localStorage.getItem("startingGrid")));
       setGrid(JSON.parse(localStorage.getItem("currentGrid")));
@@ -46,7 +46,7 @@ const Grid = () => {
 
   const handleSolve = () => {
     let solvedBoard = JSON.parse(JSON.stringify(grid));
-    let solvedStatus = solveSudoko(solvedBoard);
+    let solvedStatus = solveSudoku(solvedBoard);
     if (solvedStatus === false) {
       alert("Cannot be solved!");
       return;
@@ -65,7 +65,7 @@ const Grid = () => {
 
   const handleHint = () => {
     let solvedBoard = JSON.parse(JSON.stringify(grid));
-    let solvedStatus = solveSudoko(solvedBoard);
+    let solvedStatus = solveSudoku(solvedBoard);
     if (solvedStatus === false) {
       alert("Cannot be solved!");
       return;

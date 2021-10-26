@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="main-heading">
-        Sudoko Game
+        Sudoku Game
       </h1>
       <Grid/>
     </div>

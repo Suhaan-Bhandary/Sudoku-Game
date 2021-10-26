@@ -23,7 +23,7 @@ const isValidNode = (row, col, value, board) => {
   return true;
 };
 
-const solveSudoko = (board) => {
+const solveSudoku = (board) => {
   //   console.log(board);
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
@@ -31,7 +31,7 @@ const solveSudoko = (board) => {
         for (let k = 1; k <= 9; k++) {
           if (isValidNode(i, j, k, board)) {
             board[i][j].value = k;
-            if(solveSudoko(board))return true;
+            if(solveSudoku(board))return true;
             board[i][j].value = 0;
           }
         }
@@ -42,4 +42,4 @@ const solveSudoko = (board) => {
   return true;
 };
 
-export default solveSudoko;
+export default solveSudoku;

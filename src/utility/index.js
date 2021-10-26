@@ -1,7 +1,7 @@
 import arrayDeepCopy from "./arrayDeepCopy";
-import createSudokoGrid from "./createSudokoGrid";
+import createSudokuGrid from "./createSudokuGrid";
 import animateElement from "./animateElement";
 import checkBoard from "./checkBoard";
-import solveSudoko from "./solveSudoko";
+import solveSudoku from "./solveSudoku";
 
-export { arrayDeepCopy, createSudokoGrid, animateElement, checkBoard, solveSudoko };
+export { arrayDeepCopy, createSudokuGrid, animateElement, checkBoard, solveSudoku };
