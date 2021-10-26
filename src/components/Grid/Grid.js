@@ -65,19 +65,30 @@ const Grid = () => {
       return;
     }
 
+    // Finding all the empty nodes
+    let emptyNodePositionList = [];
     for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 9; j++) {
         if (grid[i][j].value === 0) {
-          let newBoard = JSON.parse(JSON.stringify(grid));
-
-          newBoard[i][j].value = solvedBoard[i][j].value;
-          newBoard[i][j].isHinted = true;
-
-          setGrid(newBoard);
-          return;
+          emptyNodePositionList.push([i, j]);
         }
       }
     }
+
+    // Making new node and replacing the empty value with the hint
+    let newBoard = JSON.parse(JSON.stringify(grid));
+    const hintNode =
+      emptyNodePositionList[
+        Math.floor(Math.random() * emptyNodePositionList.length)
+      ];
+    let hint_row = hintNode[0];
+    let hint_column = hintNode[1];
+
+    newBoard[hint_row][hint_column].value =
+      solvedBoard[hint_row][hint_column].value;
+    newBoard[hint_row][hint_column].isHinted = true;
+
+    setGrid(newBoard);
   };
 
   const handleCellClick = (row, column, isModifiable) => {
