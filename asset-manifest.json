@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Sudoku-Game/static/css/main.b0893b17.chunk.css",
-    "main.js": "/Sudoku-Game/static/js/main.7c652046.chunk.js",
-    "main.js.map": "/Sudoku-Game/static/js/main.7c652046.chunk.js.map",
+    "main.js": "/Sudoku-Game/static/js/main.bf431e43.chunk.js",
+    "main.js.map": "/Sudoku-Game/static/js/main.bf431e43.chunk.js.map",
     "runtime-main.js": "/Sudoku-Game/static/js/runtime-main.30993a7f.js",
     "runtime-main.js.map": "/Sudoku-Game/static/js/runtime-main.30993a7f.js.map",
     "static/css/2.a1596f27.chunk.css": "/Sudoku-Game/static/css/2.a1596f27.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.a1596f27.chunk.css",
     "static/js/2.70c0760f.chunk.js",
     "static/css/main.b0893b17.chunk.css",
-    "static/js/main.7c652046.chunk.js"
+    "static/js/main.bf431e43.chunk.js"
   ]
 }
