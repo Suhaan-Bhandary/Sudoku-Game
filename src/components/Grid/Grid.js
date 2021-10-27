@@ -102,6 +102,15 @@ const Grid = () => {
     setCurrentGrid(newBoard);
   };
 
+  const handleNewGame = () => {
+    let newSudokuGrid = createSudokuGrid();
+    setStartingGrid(arrayDeepCopy(newSudokuGrid));
+    setGrid(arrayDeepCopy(newSudokuGrid));
+
+    localStorage.setItem("startingGrid", JSON.stringify(newSudokuGrid));
+    localStorage.setItem("currentGrid", JSON.stringify(newSudokuGrid));
+  }
+
   const handleCellClick = (row, column, isModifiable) => {
     if (!isModifiable) {
       animateElement(".grid-table", "headShake");
@@ -124,6 +133,8 @@ const Grid = () => {
       <h1 onClick={() => handleReset()}>Reset</h1>
       <h1 onClick={() => handleSolve()}>Solve</h1>
       <h1 onClick={() => handleHint()}>Hint</h1>
+
+      <h1 onClick={() => handleNewGame()}>New Game</h1>
 
       <table className="grid-table">
         <tbody>
