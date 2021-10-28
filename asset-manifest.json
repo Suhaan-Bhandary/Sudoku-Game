@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Sudoku-Game/static/css/main.aee76286.chunk.css",
-    "main.js": "/Sudoku-Game/static/js/main.8a1851c6.chunk.js",
-    "main.js.map": "/Sudoku-Game/static/js/main.8a1851c6.chunk.js.map",
+    "main.css": "/Sudoku-Game/static/css/main.4c218059.chunk.css",
+    "main.js": "/Sudoku-Game/static/js/main.648f4715.chunk.js",
+    "main.js.map": "/Sudoku-Game/static/js/main.648f4715.chunk.js.map",
     "runtime-main.js": "/Sudoku-Game/static/js/runtime-main.96921ac0.js",
     "runtime-main.js.map": "/Sudoku-Game/static/js/runtime-main.96921ac0.js.map",
     "static/css/2.a1596f27.chunk.css": "/Sudoku-Game/static/css/2.a1596f27.chunk.css",
-    "static/js/2.62943aaf.chunk.js": "/Sudoku-Game/static/js/2.62943aaf.chunk.js",
-    "static/js/2.62943aaf.chunk.js.map": "/Sudoku-Game/static/js/2.62943aaf.chunk.js.map",
+    "static/js/2.069ccbd5.chunk.js": "/Sudoku-Game/static/js/2.069ccbd5.chunk.js",
+    "static/js/2.069ccbd5.chunk.js.map": "/Sudoku-Game/static/js/2.069ccbd5.chunk.js.map",
     "static/js/3.48681e36.chunk.js": "/Sudoku-Game/static/js/3.48681e36.chunk.js",
     "static/js/3.48681e36.chunk.js.map": "/Sudoku-Game/static/js/3.48681e36.chunk.js.map",
     "index.html": "/Sudoku-Game/index.html",
     "static/css/2.a1596f27.chunk.css.map": "/Sudoku-Game/static/css/2.a1596f27.chunk.css.map",
-    "static/css/main.aee76286.chunk.css.map": "/Sudoku-Game/static/css/main.aee76286.chunk.css.map",
-    "static/js/2.62943aaf.chunk.js.LICENSE.txt": "/Sudoku-Game/static/js/2.62943aaf.chunk.js.LICENSE.txt"
+    "static/css/main.4c218059.chunk.css.map": "/Sudoku-Game/static/css/main.4c218059.chunk.css.map",
+    "static/js/2.069ccbd5.chunk.js.LICENSE.txt": "/Sudoku-Game/static/js/2.069ccbd5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.96921ac0.js",
     "static/css/2.a1596f27.chunk.css",
-    "static/js/2.62943aaf.chunk.js",
-    "static/css/main.aee76286.chunk.css",
-    "static/js/main.8a1851c6.chunk.js"
+    "static/js/2.069ccbd5.chunk.js",
+    "static/css/main.4c218059.chunk.css",
+    "static/js/main.648f4715.chunk.js"
   ]
 }
