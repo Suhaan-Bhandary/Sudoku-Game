@@ -1,0 +1,67 @@
+.InformationModal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.modal-container .modal-title {
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.modal-close-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-btn-container button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modal-container .modal-body {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-size: 23px;
+  text-align: justify;
+  margin-bottom: 12px;
+}
+
+.modal-container .modal-body .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  text-align: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-container .modal-footer {
+  flex: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 import "./Game.css";
-import { Grid, ChoiceBoard, Button } from "../../components/index.js";
+import {
+  Grid,
+  ChoiceBoard,
+  Button,
+  InformationModal,
+} from "../../components/index.js";
 import {
   animateElement,
   arrayDeepCopy,
@@ -14,6 +19,9 @@ const Game = () => {
   const [grid, setGrid] = useState(null);
   const [startingGrid, setStartingGrid] = useState(null);
   const [clickValue, setClickValue] = useState(1);
+
+  // Logic for modal
+  const [showInformationModal, setShowInformationModal] = useState(false);
 
   useEffect(() => {
     // Creating a grid for the sudoku
@@ -128,8 +136,19 @@ const Game = () => {
 
   return (
     <div className="Game">
-      <h1>Sudoku Game</h1>
-      {/* TODO:Make a information modal */}
+      <h1
+        onClick={() => setShowInformationModal((show) => !show)}
+        className="main-title"
+      >
+        Sudoku Game
+      </h1>
+      {showInformationModal && (
+        <InformationModal
+          closeModal={() => setShowInformationModal((show) => !show)}
+        />
+      )}
+
+      {/* TODO:Make a Game won modal */}
 
       <Grid handleCellClick={handleCellClick} grid={grid} />
 
