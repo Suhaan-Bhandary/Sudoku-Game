@@ -1,15 +1,14 @@
-import React from 'react'
-import Grid from './components/Grid/Grid'
+import React from "react";
+import Game from "./screens/Game/Game";
+
+import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <h1 className="main-heading">
-        Sudoku Game
-      </h1>
-      <Grid/>
+      <Game />
     </div>
   );
-}
+};
 
 export default App;

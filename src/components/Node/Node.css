@@ -1,5 +1,5 @@
 td {
-  border: 1px solid black;
+  border: 1px solid #141c3a;
   width: 30px;
   height: 30px;
   text-align: center;
@@ -9,11 +9,11 @@ td {
 }
 
 .right-border {
-  border-right: 3px solid black;
+  border-right: 3px solid #141c3a;
 }
 
 .bottom-border {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid #141c3a;
 }
 
 .cell-modifiable{

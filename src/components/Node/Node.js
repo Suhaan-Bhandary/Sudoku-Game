@@ -13,7 +13,6 @@ const Node = (props) => {
     ${cell.isModifiable ? "cell-modifiable" : ""}
     ${cell.isHinted ? "cell-hinted" : ""}
     `;
-
     return className;
   };
 
