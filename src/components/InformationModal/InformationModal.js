@@ -19,11 +19,27 @@ const InformationModal = ({ closeModal }) => {
             of DM, it includes the sudoku generation and sudoku solver!
           </p>
           <div className="links">
-            <a href="www.linkedin.com/in/suhaan-bhandary">LinkedIn</a>
-            <a href="https://www.youtube.com/channel/UCHfmmdKuRDmZ5EUzGdqI7-Q">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.linkedin.com/in/suhaan-bhandary"
+            >
+              LinkedIn
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.youtube.com/channel/UCHfmmdKuRDmZ5EUzGdqI7-Q"
+            >
               YouTube
             </a>
-            <a href="https://github.com/Suhaan-Bhandary">GitHub</a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/Suhaan-Bhandary"
+            >
+              GitHub
+            </a>
           </div>
         </div>
         <div className="modal-footer">
