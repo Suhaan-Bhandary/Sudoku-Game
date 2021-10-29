@@ -7,6 +7,7 @@ import {
   ChoiceBoard,
   Button,
   InformationModal,
+  NoSolutionFoundModal,
 } from "../../components/index.js";
 
 import {
@@ -33,6 +34,7 @@ const Game = () => {
 
   // Logic for modal
   const [showInformationModal, setShowInformationModal] = useState(false);
+  const [showNoSolutionFoundModal, setShowNoSolutionFoundModal] = useState(false);
 
   useEffect(() => {
     if (grid == null && startingGrid == null) {
@@ -46,7 +48,7 @@ const Game = () => {
     let solvedBoard = arrayDeepCopy(grid);
     let solvedStatus = solveSudoku(solvedBoard);
     if (solvedStatus === false) {
-      alert("Cannot be solved!");
+      setShowNoSolutionFoundModal((show) => !show);
       return;
     }
 
@@ -144,13 +146,18 @@ const Game = () => {
       >
         Sudoku Game
       </h1>
+
       {showInformationModal && (
         <InformationModal
           closeModal={() => setShowInformationModal((show) => !show)}
         />
       )}
 
-      {/* TODO:Make a Game won modal */}
+      {showNoSolutionFoundModal && (
+        <NoSolutionFoundModal
+          closeModal={() => setShowNoSolutionFoundModal((show) => !show)}
+        />
+      )}
 
       <Grid handleCellClick={handleCellClick} grid={grid} />
 
