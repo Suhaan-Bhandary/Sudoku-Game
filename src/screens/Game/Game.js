@@ -42,10 +42,6 @@ const Game = () => {
     }
   }, [grid, startingGrid, setStartingGrid, setGrid]);
 
-  const handleReset = () => {
-    setGrid(arrayDeepCopy(startingGrid));
-  };
-
   const handleSolve = () => {
     let solvedBoard = arrayDeepCopy(grid);
     let solvedStatus = solveSudoku(solvedBoard);
@@ -54,14 +50,18 @@ const Game = () => {
       return;
     }
 
+    let newHints = 0;
     for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 9; j++) {
         if (grid[i][j].value === 0) {
+          newHints++;
           solvedBoard[i][j].isHinted = true;
           solvedBoard[i][j].isModifiable = false;
         }
       }
     }
+
+    setHintsTaken((hints) => hints + newHints);
     setGrid(solvedBoard);
   };
 
@@ -158,7 +158,7 @@ const Game = () => {
 
       <div className="action-container">
         <Button
-          onClick={handleReset}
+          onClick={() => setGrid(arrayDeepCopy(startingGrid))}
           buttonStyle="btn--primary--solid"
           text="Clear"
         />
