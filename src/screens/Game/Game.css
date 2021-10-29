@@ -22,3 +22,19 @@
   margin-bottom: 10px;
   text-decoration: underline;
 }
+
+.show-game-detail-container-button {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px 20px;
+}
+
+.show-game-detail-container-button button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}

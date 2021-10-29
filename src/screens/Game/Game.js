@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import "./Game.css";
+import { AiOutlineMenu } from "react-icons/ai";
 
 import {
   Grid,
@@ -8,12 +9,14 @@ import {
   Button,
   InformationModal,
   NoSolutionFoundModal,
+  GameDetails,
 } from "../../components/index.js";
 
 import {
   animateElement,
   arrayDeepCopy,
   checkBoard,
+  checkPlayerWon,
   createSudokuGrid,
   solveSudoku,
 } from "../../utility";
@@ -28,6 +31,9 @@ const Game = () => {
   // Game Score logic
   const [movesTaken, setMovesTaken] = useLocalStorage("movesTaken", 0);
   const [hintsTaken, setHintsTaken] = useLocalStorage("hintsTaken", 0);
+  const [isPlayerWon, setIsPlayerWon] = useLocalStorage("playerWon", false);
+  const [pressedSolve, setPressedSolve] = useLocalStorage("pressedSolve", false);
+
   const [startTime, setStartTime] = useLocalStorage("startTime", () =>
     Date().toLocaleString()
   );
@@ -35,6 +41,7 @@ const Game = () => {
   // Logic for modal
   const [showInformationModal, setShowInformationModal] = useState(false);
   const [showNoSolutionFoundModal, setShowNoSolutionFoundModal] = useState(false);
+  const [showGameDetails, setShowGameDetails] = useState(false);
 
   useEffect(() => {
     if (grid == null && startingGrid == null) {
@@ -64,6 +71,9 @@ const Game = () => {
     }
 
     setHintsTaken((hints) => hints + newHints);
+    setIsPlayerWon(true);
+    setShowGameDetails(true);
+    setPressedSolve(true);
     setGrid(solvedBoard);
   };
 
@@ -88,9 +98,9 @@ const Game = () => {
       }
     }
 
-    if (emptyNodePositionList.length === 0) {
-      return;
-    }
+    // Checking the base case
+    if (emptyNodePositionList.length === 0) return;
+    if (emptyNodePositionList.length === 1) setIsPlayerWon(true);
 
     // Making new node and replacing the empty value with the hint
     let newBoard = arrayDeepCopy(grid);
@@ -118,8 +128,15 @@ const Game = () => {
     // Reseting the values
     setMovesTaken(0);
     setHintsTaken(0);
+    setIsPlayerWon(false);
+    setPressedSolve(false);
     setStartTime(() => Date().toLocaleString());
   };
+
+  const handleClearBoard = () => {
+    setIsPlayerWon(false);
+    setGrid(arrayDeepCopy(startingGrid));
+  }
 
   const handleCellClick = (row, column, isModifiable) => {
     if (!isModifiable) {
@@ -133,20 +150,34 @@ const Game = () => {
     let newGrid = arrayDeepCopy(grid);
     newGrid[row][column].value = clickValue;
 
+    // Marking the node valid or invalid depending on the grid
     checkBoard(newGrid);
+
+    // Checking if the player has won
+    let playerWon = checkPlayerWon(newGrid);
+    if (playerWon) {
+      setIsPlayerWon(true);
+      setShowGameDetails(true);
+    }
+
     // setting the value to the grid and also to the local storage
     setGrid(newGrid);
   };
 
   return (
     <div className="Game">
+      <div className="show-game-detail-container-button">
+        <button onClick={() => setShowGameDetails((show) => !show)}>
+          <AiOutlineMenu />
+        </button>
+      </div>
+
       <h1
         onClick={() => setShowInformationModal((show) => !show)}
         className="main-title"
       >
         Sudoku Game
       </h1>
-
       {showInformationModal && (
         <InformationModal
           closeModal={() => setShowInformationModal((show) => !show)}
@@ -159,13 +190,21 @@ const Game = () => {
         />
       )}
 
+      {showGameDetails && (
+        <GameDetails
+          closeModal={() => setShowGameDetails((show) => !show)}
+          movesTaken={movesTaken}
+          hintsTaken={hintsTaken}
+          startTime={startTime}
+          isPlayerWon={isPlayerWon}
+          pressedSolve={pressedSolve}
+        />
+      )}
       <Grid handleCellClick={handleCellClick} grid={grid} />
-
       <ChoiceBoard setClickValue={setClickValue} selected={clickValue} />
-
       <div className="action-container">
         <Button
-          onClick={() => setGrid(arrayDeepCopy(startingGrid))}
+          onClick={handleClearBoard}
           buttonStyle="btn--primary--solid"
           text="Clear"
         />
