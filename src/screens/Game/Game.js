@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import "./Game.css";
+
 import {
   Grid,
   ChoiceBoard,
   Button,
   InformationModal,
 } from "../../components/index.js";
+
 import {
   animateElement,
   arrayDeepCopy,
@@ -15,44 +17,30 @@ import {
   solveSudoku,
 } from "../../utility";
 
+import useLocalStorage from "../../hooks/useLocalStorage";
+
 const Game = () => {
-  const [grid, setGrid] = useState(null);
-  const [startingGrid, setStartingGrid] = useState(null);
-  const [clickValue, setClickValue] = useState(1);
+  const [grid, setGrid] = useLocalStorage("currentGrid",null);
+  const [startingGrid, setStartingGrid] = useLocalStorage("startingGrid", null);
+  const [clickValue, setClickValue] = useLocalStorage("clickValue", 1);
 
   // Logic for modal
   const [showInformationModal, setShowInformationModal] = useState(false);
 
   useEffect(() => {
-    // Creating a grid for the sudoku
-    if (
-      localStorage.getItem("startingGrid") == null ||
-      localStorage.getItem("currentGrid") == null
-    ) {
+    if (grid == null && startingGrid == null) {
       let newSudokuGrid = createSudokuGrid();
       setStartingGrid(arrayDeepCopy(newSudokuGrid));
       setGrid(arrayDeepCopy(newSudokuGrid));
-
-      localStorage.setItem("startingGrid", JSON.stringify(newSudokuGrid));
-      localStorage.setItem("currentGrid", JSON.stringify(newSudokuGrid));
-    } else {
-      setStartingGrid(JSON.parse(localStorage.getItem("startingGrid")));
-      setGrid(JSON.parse(localStorage.getItem("currentGrid")));
     }
-  }, []);
-
-  const setCurrentGrid = (givenGrid) => {
-    // setting the value to the grid and also to the local storage
-    setGrid(givenGrid);
-    localStorage.setItem("currentGrid", JSON.stringify(givenGrid));
-  };
+  }, [grid, startingGrid, setStartingGrid, setGrid]);
 
   const handleReset = () => {
-    setCurrentGrid(arrayDeepCopy(startingGrid));
+    setGrid(arrayDeepCopy(startingGrid));
   };
 
   const handleSolve = () => {
-    let solvedBoard = JSON.parse(JSON.stringify(grid));
+    let solvedBoard = arrayDeepCopy(grid);
     let solvedStatus = solveSudoku(solvedBoard);
     if (solvedStatus === false) {
       alert("Cannot be solved!");
@@ -67,11 +55,11 @@ const Game = () => {
         }
       }
     }
-    setCurrentGrid(solvedBoard);
+    setGrid(solvedBoard);
   };
 
   const handleHint = () => {
-    let solvedBoard = JSON.parse(JSON.stringify(grid));
+    let solvedBoard = arrayDeepCopy(grid);
     let solvedStatus = solveSudoku(solvedBoard);
     if (solvedStatus === false) {
       alert("Cannot be solved!");
@@ -93,7 +81,7 @@ const Game = () => {
     }
 
     // Making new node and replacing the empty value with the hint
-    let newBoard = JSON.parse(JSON.stringify(grid));
+    let newBoard = arrayDeepCopy(grid);
     const hintNode =
       emptyNodePositionList[
         Math.floor(Math.random() * emptyNodePositionList.length)
@@ -106,16 +94,13 @@ const Game = () => {
     newBoard[hint_row][hint_column].isHinted = true;
     newBoard[hint_row][hint_column].isModifiable = false;
 
-    setCurrentGrid(newBoard);
+    setGrid(newBoard);
   };
 
   const handleNewGame = () => {
     let newSudokuGrid = createSudokuGrid();
     setStartingGrid(arrayDeepCopy(newSudokuGrid));
     setGrid(arrayDeepCopy(newSudokuGrid));
-
-    localStorage.setItem("startingGrid", JSON.stringify(newSudokuGrid));
-    localStorage.setItem("currentGrid", JSON.stringify(newSudokuGrid));
   };
 
   const handleCellClick = (row, column, isModifiable) => {
@@ -124,14 +109,14 @@ const Game = () => {
       return;
     }
 
-    let newGrid = [...grid];
+    let newGrid = arrayDeepCopy(grid);
 
     newGrid[row][column].value = clickValue;
 
     checkBoard(newGrid);
 
     // setting the value to the grid and also to the local storage
-    setCurrentGrid(newGrid);
+    setGrid(newGrid);
   };
 
   return (
