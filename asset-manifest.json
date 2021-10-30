@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Sudoku-Game/static/css/main.0efaf815.chunk.css",
+    "main.css": "/Sudoku-Game/static/css/main.e044b7b1.chunk.css",
     "main.js": "/Sudoku-Game/static/js/main.e60be3af.chunk.js",
     "main.js.map": "/Sudoku-Game/static/js/main.e60be3af.chunk.js.map",
     "runtime-main.js": "/Sudoku-Game/static/js/runtime-main.7a70aa2f.js",
@@ -12,14 +12,14 @@
     "static/js/3.a24a3f72.chunk.js.map": "/Sudoku-Game/static/js/3.a24a3f72.chunk.js.map",
     "index.html": "/Sudoku-Game/index.html",
     "static/css/2.a1596f27.chunk.css.map": "/Sudoku-Game/static/css/2.a1596f27.chunk.css.map",
-    "static/css/main.0efaf815.chunk.css.map": "/Sudoku-Game/static/css/main.0efaf815.chunk.css.map",
+    "static/css/main.e044b7b1.chunk.css.map": "/Sudoku-Game/static/css/main.e044b7b1.chunk.css.map",
     "static/js/2.ab3ec4ea.chunk.js.LICENSE.txt": "/Sudoku-Game/static/js/2.ab3ec4ea.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7a70aa2f.js",
     "static/css/2.a1596f27.chunk.css",
     "static/js/2.ab3ec4ea.chunk.js",
-    "static/css/main.0efaf815.chunk.css",
+    "static/css/main.e044b7b1.chunk.css",
     "static/js/main.e60be3af.chunk.js"
   ]
 }
