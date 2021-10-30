@@ -3,6 +3,15 @@
 A Sudoku game which you can play to refresh yourself if you are a fan of sudoku.
 It is also for them who want to visualize algorithms!
 
+## Features
+
+- Play Sudoku anywhere and anytime!
+- Auto Save mode, it remembers the Sudoku Grid you are playing
+- Interactive Design
+- Random Grid Generator
+- Sudoku Solver
+- Hints - Yes! you can get a random hint depending on the current grid!
+
 Note:
 Sudoku Generator is not properly made as it works on the concepts of randomness and as name suggest it is random and doesnot provide the best or nice looking grid everytime but give a solveable grid, Therefore any one willing to carry this can contribute to it!
 ## Author
