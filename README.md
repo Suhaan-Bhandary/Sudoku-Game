@@ -2,6 +2,9 @@
 
 A Sudoku game which you can play to refresh yourself if you are a fan of sudoku.
 It is also for them who want to visualize algorithms!
+
+Note:
+Sudoku Generator is not properly made as it works on the concepts of randomness and as name suggest it is random and doesnot provide the best or nice looking grid everytime but give a solveable grid, Therefore any one willing to carry this can contribute to it!
 ## Author
 
 - [@SuhaanBhandary](https://github.com/Suhaan-Bhandary)
