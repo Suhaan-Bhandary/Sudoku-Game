@@ -4,6 +4,7 @@ import animateElement from "./animateElement";
 import checkBoard from "./checkBoard";
 import solveSudoku from "./solveSudoku";
 import checkPlayerWon from "./checkPlayerWon";
+import getHint from "./getHint";
 
 export {
   arrayDeepCopy,
@@ -12,4 +13,5 @@ export {
   checkBoard,
   solveSudoku,
   checkPlayerWon,
+  getHint,
 };

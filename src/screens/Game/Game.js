@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 import "./Game.css";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -23,6 +23,7 @@ import {
 } from "../../utility";
 
 import useLocalStorage from "../../hooks/useLocalStorage";
+import getHint from "../../utility/getHint";
 
 const easyMaxEmptyCells = 30;
 const mediumMaxEmptyCells = 40;
@@ -85,45 +86,30 @@ const Game = () => {
   };
 
   const handleHint = () => {
-    let solvedBoard = arrayDeepCopy(grid);
-    let solvedStatus = solveSudoku(solvedBoard);
-    if (solvedStatus === false) {
+    // Checking if player has won
+    if (isPlayerWon) return;
+
+    // Getting hint
+    let hintResponse = getHint(grid);
+
+    // Checking if the grid cannot be solved
+    if (hintResponse.solvedStatus === false) {
       setShowNoSolutionFoundModal((show) => !show);
       return;
     }
 
+    // setting the result board
+    setGrid(hintResponse.board);
+
     // Adding hint count
     setHintsTaken((hints) => hints + 1);
 
-    // Finding all the empty nodes
-    let emptyNodePositionList = [];
-    for (let i = 0; i < 9; i++) {
-      for (let j = 0; j < 9; j++) {
-        if (grid[i][j].value === 0) {
-          emptyNodePositionList.push([i, j]);
-        }
-      }
+    // Checking if the player has won
+    let playerWon = checkPlayerWon(hintResponse.board);
+    if (playerWon) {
+      setIsPlayerWon(true);
+      setShowGameDetails(true);
     }
-
-    // Checking the base case
-    if (emptyNodePositionList.length === 0) return;
-    if (emptyNodePositionList.length === 1) setIsPlayerWon(true);
-
-    // Making new node and replacing the empty value with the hint
-    let newBoard = arrayDeepCopy(grid);
-    const hintNode =
-      emptyNodePositionList[
-        Math.floor(Math.random() * emptyNodePositionList.length)
-      ];
-    let hint_row = hintNode[0];
-    let hint_column = hintNode[1];
-
-    newBoard[hint_row][hint_column].value =
-      solvedBoard[hint_row][hint_column].value;
-    newBoard[hint_row][hint_column].isHinted = true;
-    newBoard[hint_row][hint_column].isModifiable = false;
-
-    setGrid(newBoard);
   };
 
   const handleNewGame = (maxEmptyCellsCount) => {
@@ -181,7 +167,7 @@ const Game = () => {
   console.log("....");
 
   // If we donot have anything in the local storage
-  if (grid == null && startingGrid == null)handleNewGame(gameMode);
+  if (grid == null && startingGrid == null) handleNewGame(gameMode);
 
   return (
     <div className="Game">
