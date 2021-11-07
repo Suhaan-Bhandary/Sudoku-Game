@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Sudoku-Game/static/css/main.e044b7b1.chunk.css",
-    "main.js": "/Sudoku-Game/static/js/main.8d8535a4.chunk.js",
-    "main.js.map": "/Sudoku-Game/static/js/main.8d8535a4.chunk.js.map",
-    "runtime-main.js": "/Sudoku-Game/static/js/runtime-main.7a70aa2f.js",
-    "runtime-main.js.map": "/Sudoku-Game/static/js/runtime-main.7a70aa2f.js.map",
+    "main.css": "/Sudoku-Game/static/css/main.ee6dae56.chunk.css",
+    "main.js": "/Sudoku-Game/static/js/main.219ac182.chunk.js",
+    "main.js.map": "/Sudoku-Game/static/js/main.219ac182.chunk.js.map",
+    "runtime-main.js": "/Sudoku-Game/static/js/runtime-main.b9ae4eb2.js",
+    "runtime-main.js.map": "/Sudoku-Game/static/js/runtime-main.b9ae4eb2.js.map",
     "static/css/2.a1596f27.chunk.css": "/Sudoku-Game/static/css/2.a1596f27.chunk.css",
-    "static/js/2.ab3ec4ea.chunk.js": "/Sudoku-Game/static/js/2.ab3ec4ea.chunk.js",
-    "static/js/2.ab3ec4ea.chunk.js.map": "/Sudoku-Game/static/js/2.ab3ec4ea.chunk.js.map",
-    "static/js/3.a24a3f72.chunk.js": "/Sudoku-Game/static/js/3.a24a3f72.chunk.js",
-    "static/js/3.a24a3f72.chunk.js.map": "/Sudoku-Game/static/js/3.a24a3f72.chunk.js.map",
+    "static/js/2.78addc3e.chunk.js": "/Sudoku-Game/static/js/2.78addc3e.chunk.js",
+    "static/js/2.78addc3e.chunk.js.map": "/Sudoku-Game/static/js/2.78addc3e.chunk.js.map",
+    "static/js/3.6941f2af.chunk.js": "/Sudoku-Game/static/js/3.6941f2af.chunk.js",
+    "static/js/3.6941f2af.chunk.js.map": "/Sudoku-Game/static/js/3.6941f2af.chunk.js.map",
     "index.html": "/Sudoku-Game/index.html",
     "static/css/2.a1596f27.chunk.css.map": "/Sudoku-Game/static/css/2.a1596f27.chunk.css.map",
-    "static/css/main.e044b7b1.chunk.css.map": "/Sudoku-Game/static/css/main.e044b7b1.chunk.css.map",
-    "static/js/2.ab3ec4ea.chunk.js.LICENSE.txt": "/Sudoku-Game/static/js/2.ab3ec4ea.chunk.js.LICENSE.txt"
+    "static/css/main.ee6dae56.chunk.css.map": "/Sudoku-Game/static/css/main.ee6dae56.chunk.css.map",
+    "static/js/2.78addc3e.chunk.js.LICENSE.txt": "/Sudoku-Game/static/js/2.78addc3e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7a70aa2f.js",
+    "static/js/runtime-main.b9ae4eb2.js",
     "static/css/2.a1596f27.chunk.css",
-    "static/js/2.ab3ec4ea.chunk.js",
-    "static/css/main.e044b7b1.chunk.css",
-    "static/js/main.8d8535a4.chunk.js"
+    "static/js/2.78addc3e.chunk.js",
+    "static/css/main.ee6dae56.chunk.css",
+    "static/js/main.219ac182.chunk.js"
   ]
 }
