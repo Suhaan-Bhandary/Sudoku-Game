@@ -63,7 +63,7 @@ const solveRandomSudoku = (board) => {
   return true;
 };
 
-const getSudokuGrid = () => {
+const getSudokuGrid = (maxEmptyCellsCount) => {
   let sudokuGrid = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -80,7 +80,7 @@ const getSudokuGrid = () => {
 
   solveRandomSudoku(sudokuGrid);
 
-  // The method was not having 
+  // The method was not having
   // let emptyPositions = 81;
   // for (let i = 0; i <emptyPositions; i++) {
   //   let row = Math.floor(Math.random() * 9);
@@ -88,20 +88,19 @@ const getSudokuGrid = () => {
   //   sudokuGrid[row][col] = 0;
   // }
 
-  
   // The min number of filled cell, so that unique solution exists is 17
   let emptyCells = 0;
   let suffledCells = [];
-  for (let i = 0; i < 81; i++){
+  for (let i = 0; i < 81; i++) {
     suffledCells.push(i);
   }
 
   // We are suffling the array to get random ordering of the elements
   suffledCells.sort(() => Math.random() - 0.5);
-  
+
   let index = 0;
-  while(emptyCells <= 51 & index < 81){
-    if(suffledCells.length === 0) break;
+  while ((emptyCells <= maxEmptyCellsCount) & (index < 81)) {
+    if (suffledCells.length === 0) break;
 
     let cell = suffledCells[index];
     index++;
@@ -113,11 +112,11 @@ const getSudokuGrid = () => {
     sudokuGrid[i][j] = 0;
 
     let count = countSudokuSolution(sudokuGrid);
-    
-    if(count === 1) emptyCells++;
+
+    if (count === 1) emptyCells++;
     else sudokuGrid[i][j] = value;
   }
-  
+
   return sudokuGrid;
 };
 
@@ -149,8 +148,8 @@ const getNode = (row, column, value, isModifiable) => {
   };
 };
 
-const createSudokuGrid = () => {
-  const numberGrid = getSudokuGrid();
+const createSudokuGrid = (maxEmptyCellsCount) => {
+  const numberGrid = getSudokuGrid(maxEmptyCellsCount);
   let sudokuGrid = [];
 
   for (let i = 0; i < 9; i++) {

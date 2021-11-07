@@ -1,0 +1,102 @@
+.DifficultySelectionModal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200,0.3);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.modal-container {
+  width: 500px;
+  height: auto;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  margin: 10px;
+}
+
+.modal-container .modal-title {
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.modal-close-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-btn-container button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modal-container .modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-size: 23px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.modal-container .modal-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.difficulty-selection-container{
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  }
+
+.difficulty{
+  max-width: 30%;
+  margin: 30px 0;
+  border-style: solid;
+  border-width: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  border-radius: 30px;
+}
+
+.easy{
+  border-color:  lightgreen;
+}
+
+.medium{
+  border-color: orange;
+}
+
+.hard{
+  border-color: red;
+}
+
+.animation-container-difficulty{
+  height: 50%;
+}
+
+@media (max-width: 870px) {
+  .difficulty{
+  max-width: 40%;
+  margin: 10px 0;
+}
+}

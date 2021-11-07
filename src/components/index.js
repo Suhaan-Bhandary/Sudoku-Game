@@ -5,6 +5,7 @@ import Button from "./Button/Button.js";
 import InformationModal from "./InformationModal/InformationModal.js";
 import NoSolutionFoundModal from "./NoSolutionFoundModal/NoSolutionFoundModal.js";
 import GameDetails from "./GameDetails/GameDetails.js";
+import DifficultySelectionModal from "./DifficultySelectionModal/DifficultySelectionModal.js";
 
 export {
   Grid,
@@ -14,4 +15,5 @@ export {
   InformationModal,
   NoSolutionFoundModal,
   GameDetails,
+  DifficultySelectionModal,
 };
