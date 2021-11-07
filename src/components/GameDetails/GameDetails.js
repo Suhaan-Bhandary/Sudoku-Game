@@ -12,7 +12,15 @@ const GameDetails = ({
   startTime,
   isPlayerWon,
   pressedSolve,
+  gameMode,
+  mediumMaxEmptyCells,
+  hardMaxEmptyCells,
 }) => {
+
+  let gameModeName = "Easy";
+  if(gameMode === mediumMaxEmptyCells) gameModeName = "Medium";
+  else if(gameMode === hardMaxEmptyCells) gameModeName = "Hard";
+
   useEffect(() => {
     let animationData;
     if (isPlayerWon && hintsTaken === 0) {
@@ -50,7 +58,7 @@ const GameDetails = ({
           <div className="animation-container" id="lottieAnimation"></div>
           {isPlayerWon && <p>You Won !</p>}
           {!isPlayerWon && <p>Keep Playing you will surely complete it!</p>}
-
+          <p>Game mode: {gameModeName}</p>
           <p>Moves Played: {movesTaken}</p>
           <p>Hints Taken: {hintsTaken}</p>
           <small>Started at: {startTime.split("GMT")[0]}</small>

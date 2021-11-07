@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 import "./Game.css";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -24,12 +24,20 @@ import {
 
 import useLocalStorage from "../../hooks/useLocalStorage";
 
+const easyMaxEmptyCells = 30;
+const mediumMaxEmptyCells = 40;
+const hardMaxEmptyCells = 50;
+
 const Game = () => {
   const [grid, setGrid] = useLocalStorage("currentGrid", null);
   const [startingGrid, setStartingGrid] = useLocalStorage("startingGrid", null);
   const [clickValue, setClickValue] = useLocalStorage("clickValue", 1);
 
   // Game Score logic
+  const [gameMode, setGameMode] = useLocalStorage(
+    "gameMode",
+    mediumMaxEmptyCells
+  );
   const [movesTaken, setMovesTaken] = useLocalStorage("movesTaken", 0);
   const [hintsTaken, setHintsTaken] = useLocalStorage("hintsTaken", 0);
   const [isPlayerWon, setIsPlayerWon] = useLocalStorage("playerWon", false);
@@ -49,14 +57,6 @@ const Game = () => {
   const [showGameDetails, setShowGameDetails] = useState(false);
   const [showDifficultySelectionModal, setShowDifficultySelectionModal] =
     useState(false);
-
-  useEffect(() => {
-    if (grid == null && startingGrid == null) {
-      let newSudokuGrid = createSudokuGrid(50);
-      setStartingGrid(arrayDeepCopy(newSudokuGrid));
-      setGrid(arrayDeepCopy(newSudokuGrid));
-    }
-  }, [grid, startingGrid, setStartingGrid, setGrid]);
 
   const handleSolve = () => {
     let solvedBoard = arrayDeepCopy(grid);
@@ -128,12 +128,13 @@ const Game = () => {
 
   const handleNewGame = (maxEmptyCellsCount) => {
     // Waiting for the function to return the grid
-    console.log("start");
     let newSudokuGrid = createSudokuGrid(maxEmptyCellsCount);
-    console.log("stop");
 
     setStartingGrid(arrayDeepCopy(newSudokuGrid));
     setGrid(arrayDeepCopy(newSudokuGrid));
+
+    // Setting the game mode with maxEmptyCellsCount
+    setGameMode(maxEmptyCellsCount);
 
     // Reseting the values
     setMovesTaken(0);
@@ -179,6 +180,9 @@ const Game = () => {
 
   console.log("....");
 
+  // If we donot have anything in the local storage
+  if (grid == null && startingGrid == null)handleNewGame(gameMode);
+
   return (
     <div className="Game">
       <div className="show-game-detail-container-button">
@@ -209,6 +213,9 @@ const Game = () => {
         <DifficultySelectionModal
           closeModal={() => setShowDifficultySelectionModal((show) => !show)}
           handleNewGame={handleNewGame}
+          easyMaxEmptyCells={easyMaxEmptyCells}
+          mediumMaxEmptyCells={mediumMaxEmptyCells}
+          hardMaxEmptyCells={hardMaxEmptyCells}
         />
       )}
 
@@ -220,6 +227,9 @@ const Game = () => {
           startTime={startTime}
           isPlayerWon={isPlayerWon}
           pressedSolve={pressedSolve}
+          gameMode={gameMode}
+          mediumMaxEmptyCells={mediumMaxEmptyCells}
+          hardMaxEmptyCells={hardMaxEmptyCells}
         />
       )}
       <Grid handleCellClick={handleCellClick} grid={grid} />

@@ -12,6 +12,9 @@ import Button from "../Button/Button.js";
 const DifficultySelectionModal = ({
   closeModal,
   handleNewGame,
+  easyMaxEmptyCells,
+  mediumMaxEmptyCells,
+  hardMaxEmptyCells
 }) => {
   
   console.log("rendering....");
@@ -72,7 +75,7 @@ const DifficultySelectionModal = ({
         </div>
         <div className="difficulty-modal-body" ref={bodyContainer}>
           <div className="difficulty-selection-container">
-            <div className="difficulty easy" onClick={() => handleNewGame(30)}>
+            <div className="difficulty easy" onClick={() => handleNewGame(easyMaxEmptyCells)}>
               <div
                 className="animation-container-difficulty"
                 id="easyDifficultyAnimation"
@@ -82,7 +85,7 @@ const DifficultySelectionModal = ({
 
             <div
               className="difficulty medium"
-              onClick={() => handleNewGame(40)}
+              onClick={() => handleNewGame(mediumMaxEmptyCells)}
             >
               <div
                 className="animation-container-difficulty"
@@ -91,7 +94,7 @@ const DifficultySelectionModal = ({
               <p>Medium</p>
             </div>
 
-            <div className="difficulty hard" onClick={() => handleNewGame(50)}>
+            <div className="difficulty hard" onClick={() => handleNewGame(hardMaxEmptyCells)}>
               <div
                 className="animation-container-difficulty"
                 id="hardDifficultyAnimation"
