@@ -70,12 +70,9 @@ const DifficultySelectionModal = ({
         <div className="modal-title">
           <h1>Difficulty Mode</h1>
         </div>
-        <div className="modal-body" ref={bodyContainer}>
+        <div className="difficulty-modal-body" ref={bodyContainer}>
           <div className="difficulty-selection-container">
-            <div
-              className="difficulty easy"
-              onClick={() => handleNewGame(30)}
-            >
+            <div className="difficulty easy" onClick={() => handleNewGame(30)}>
               <div
                 className="animation-container-difficulty"
                 id="easyDifficultyAnimation"
@@ -94,10 +91,7 @@ const DifficultySelectionModal = ({
               <p>Medium</p>
             </div>
 
-            <div
-              className="difficulty hard"
-              onClick={() => handleNewGame(50)}
-            >
+            <div className="difficulty hard" onClick={() => handleNewGame(50)}>
               <div
                 className="animation-container-difficulty"
                 id="hardDifficultyAnimation"
@@ -105,7 +99,6 @@ const DifficultySelectionModal = ({
               <p>Hard</p>
             </div>
           </div>
-
         </div>
         <div className="modal-footer">
           <Button

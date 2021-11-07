@@ -40,7 +40,7 @@
   cursor: pointer;
 }
 
-.modal-container .modal-body {
+.modal-container .difficulty-modal-body {
   display: flex;
   justify-content: center;
   align-items: center;
