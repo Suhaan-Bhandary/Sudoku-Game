@@ -52,7 +52,7 @@ const Game = () => {
 
   useEffect(() => {
     if (grid == null && startingGrid == null) {
-      let newSudokuGrid = createSudokuGrid();
+      let newSudokuGrid = createSudokuGrid(50);
       setStartingGrid(arrayDeepCopy(newSudokuGrid));
       setGrid(arrayDeepCopy(newSudokuGrid));
     }
