@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 import lottie from "lottie-web";
 import easyDifficultyAnimationData from "../../assets/animations/DifficultyAnimations/EasyDifficultyAnimation/EasyDifficultyAnimation.json";
@@ -13,6 +13,9 @@ const DifficultySelectionModal = ({
   closeModal,
   handleNewGame,
 }) => {
+  
+  console.log("rendering....");
+  const bodyContainer = useRef(null);
 
   // Use Effect for the animation
   useEffect(() => {
@@ -48,6 +51,8 @@ const DifficultySelectionModal = ({
       ...defaultOptions,
     });
 
+    bodyContainer.current.style.visibility = 'visible';
+
     return () => {
       easyDifficultyAnimation.destroy();
       mediumDifficultyAnimation.destroy();
@@ -55,7 +60,6 @@ const DifficultySelectionModal = ({
     }; // Clean up function
   }, []);
 
-  console.log("rendering....");
 
   return (
     <div className="DifficultySelectionModal">
@@ -66,7 +70,7 @@ const DifficultySelectionModal = ({
         <div className="modal-title">
           <h1>Difficulty Mode</h1>
         </div>
-        <div className="modal-body">
+        <div className="modal-body" ref={bodyContainer}>
           <div className="difficulty-selection-container">
             <div
               className="difficulty easy"

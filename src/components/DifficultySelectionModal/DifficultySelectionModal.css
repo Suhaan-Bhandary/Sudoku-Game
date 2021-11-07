@@ -1,7 +1,7 @@
 .DifficultySelectionModal {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(200, 200, 200,0.3);
+  background-color: rgba(200, 200, 200, 0.3);
   position: fixed;
   display: flex;
   justify-content: center;
@@ -49,6 +49,8 @@
   font-size: 23px;
   text-align: center;
   margin: 30px 0;
+
+  visibility: hidden;
 }
 
 .modal-container .modal-footer {
@@ -58,14 +60,14 @@
   margin-bottom: 10px;
 }
 
-.difficulty-selection-container{
+.difficulty-selection-container {
   cursor: pointer;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  }
+}
 
-.difficulty{
+.difficulty {
   max-width: 30%;
   margin: 30px 0;
   border-style: solid;
@@ -78,25 +80,26 @@
   border-radius: 30px;
 }
 
-.easy{
-  border-color:  lightgreen;
+.easy {
+  border-color: lightgreen;
 }
 
-.medium{
+.medium {
   border-color: orange;
 }
 
-.hard{
+.hard {
   border-color: red;
 }
 
-.animation-container-difficulty{
+.animation-container-difficulty {
   height: 50%;
 }
 
 @media (max-width: 870px) {
-  .difficulty{
-  max-width: 40%;
-  margin: 10px 0;
-}
+  .difficulty {
+    max-width: 40%;
+    margin: 10px 0;
+    padding: 5px;
+  }
 }
