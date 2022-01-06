@@ -1,3 +1,5 @@
+[@Sudoku Game Demo](https://suhaan-bhandary.github.io/Sudoku-Game/)
+
 # Sudoko Game for DM Case Study: Generator and Solver
 
 A Sudoku game which you can play to refresh yourself if you are a fan of sudoku.
@@ -16,10 +18,6 @@ It is also for them who want to visualize algorithms!
 ## Author
 
 - [@SuhaanBhandary](https://github.com/Suhaan-Bhandary)
-
-## Demo
-
-[@Sudoku Game Website](https://suhaan-bhandary.github.io/Sudoku-Game/)
   
 ## Installation
 
