@@ -31,7 +31,7 @@ Making Changes and trying you hand on !
 
 ```bash
 1. Its a React code so just fork it and download the code on you device.
-2. Open CMD and go to the project directory and run "yarn add"
+2. Open CMD and go to the project directory and run "yarn install"
 3. Then run the code with: "yarn start" and enjoy!
 ```
 
